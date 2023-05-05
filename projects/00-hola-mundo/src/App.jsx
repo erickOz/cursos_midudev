@@ -1,17 +1,35 @@
+import "./App.css";
+import { TwitterFollowCard } from "./TwitterFollowCard.jsx"; // importamos el componente
+
 export function App() {
+  const formatUserName = (userName) => `@${userName}`;
+
   return (
-    <article>
-      <header>
-        <img src="https://unavatar.io/midudev" />
-        <div>
-          <strong>Miguel Angel Durán</strong>
-          <br />
-          <span>@midudev</span>
-        </div>
-      </header>
-      <aside>
-        <button>Seguir</button>
-      </aside>
-    </article>
+    <main className="App">
+      <TwitterFollowCard
+        isFollowing
+        formatUserName={formatUserName}
+        name="Miguel Angel Durán"
+        userName="midudev"
+      />
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        isFollowing
+        name="Víctor Bonilla"
+        userName="victorbonillap"
+      />
+      <TwitterFollowCard
+        formatUserName={formatUserName}
+        isFollowing={false}
+        name="Pablo Hernández"
+        userName="pheralb"
+      />
+      <TwitterFollowCard
+        isFollowing
+        formatUserName={formatUserName}
+        name="Erick Olivares"
+        userName="erickOz"
+      />
+    </main>
   );
 }
